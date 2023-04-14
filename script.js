@@ -20,26 +20,58 @@ for(let i = 0; i < timeBlocks.length; i++) {
 };
 
 
-// saves the user text input to the local storage
-var saveBtn = document.querySelector('.saveBtn');
-var userInput9 = document.querySelectorAll('#textInput9');
+var saveBtn = document.querySelectorAll('.saveBtn');
+var userInput = document.querySelectorAll('.description');
+var localKeys = [];
 
-  saveBtn.addEventListener('click', function() {
-    localStorage.setItem('#textInput9', JSON.stringify(userInput9));
-    stringify();
-  });
+// loops through each text area and stores the textarea's id into the localKeys array
+for (var j=0; j < userInput.length; j++ ) {
+ localKeys.push(userInput[j].id);
+ console.log(typeof(userInput[j].value));
+}
 
-  function stringify() {
-    
-  }
+// saves the user text input to the local storage, for each save button
+saveBtn[0].addEventListener('click', function() {
+  localStorage.setItem(localKeys[0], userInput[0].value);
+});
+if(localStorage.getItem(localKeys[0])) userInput[0].textContent = localStorage.getItem(localKeys[0]);
 
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
+saveBtn[1].addEventListener('click', function() {
+  localStorage.setItem(localKeys[1], userInput[1].value);
+});
+if(localStorage.getItem(localKeys[0])) userInput[1].textContent = localStorage.getItem(localKeys[1]);
+
+saveBtn[2].addEventListener('click', function() {
+  localStorage.setItem(localKeys[2], userInput[2].value);
+});
+if(localStorage.getItem(localKeys[0])) userInput[2].textContent = localStorage.getItem(localKeys[2]);
+
+saveBtn[3].addEventListener('click', function() {
+  localStorage.setItem(localKeys[3], userInput[3].value);
+});
+if(localStorage.getItem(localKeys[3])) userInput[3].textContent = localStorage.getItem(localKeys[3]);
+
+saveBtn[4].addEventListener('click', function() {
+  localStorage.setItem(localKeys[4], userInput[4].value);
+});
+if(localStorage.getItem(localKeys[0])) userInput[4].textContent = localStorage.getItem(localKeys[4]);
+
+saveBtn[5].addEventListener('click', function() {
+  localStorage.setItem(localKeys[5], userInput[5].value);
+});
+if(localStorage.getItem(localKeys[0])) userInput[5].textContent = localStorage.getItem(localKeys[5]);
+
+saveBtn[6].addEventListener('click', function() {
+  localStorage.setItem(localKeys[6], userInput[6].value);
+});
+if(localStorage.getItem(localKeys[0])) userInput[6].textContent = localStorage.getItem(localKeys[6]);
+
+saveBtn[7].addEventListener('click', function() {
+  localStorage.setItem(localKeys[7], userInput[7].value);
+});
+if(localStorage.getItem(localKeys[0])) userInput[7].textContent = localStorage.getItem(localKeys[7]);
+
+saveBtn[8].addEventListener('click', function() {
+  localStorage.setItem(localKeys[8], userInput[8].value);
+});
+if(localStorage.getItem(localKeys[8])) userInput[8].textContent = localStorage.getItem(localKeys[8]);
